@@ -1,5 +1,5 @@
 [package]
-name = "temp"
+name = "notibox-firmware"
 version = "0.1.0"
 authors = ["Tsuki <hothuc211@gmail.com>"]
 edition = "2021"
@@ -7,7 +7,7 @@ resolver = "2"
 rust-version = "1.77"
 
 [[bin]]
-name = "temp"
+name = "notibox-firmware"
 harness = false # do not use the built in cargo test harness -> resolve rust-analyzer errors
 
 [profile.release]
@@ -25,6 +25,10 @@ experimental = ["esp-idf-svc/experimental"]
 [dependencies]
 log = "0.4"
 esp-idf-svc = "0.51"
+esp-idf-hal = "0.45"
+esp-idf-sys = "0.36"
+anyhow =  "1"
+async-std = { version = "1.12", features = ["attributes"] }
 
 # --- Optional Embassy Integration ---
 # esp-idf-svc = { version = "0.51", features = ["critical-section", "embassy-time-driver", "embassy-sync"] }
